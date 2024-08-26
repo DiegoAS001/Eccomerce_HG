@@ -25,8 +25,11 @@ public class SalvarProduto implements Command {
 		if (request.getParameter("id") != null) {
 			produto.setId(Integer.parseInt(request.getParameter("id")));
 		}
-		produto.setDescricao(request.getParameter("descricao"));
+		produto.setNome(request.getParameter("nome"));
+		produto.setTipoMidia(request.getParameter("tipoMidia"));
 		produto.setPreco(Double.parseDouble(request.getParameter("preco")));
+		produto.setCategoria(request.getParameter("categoria"));
+		produto.setPlataforma(request.getParameter("plataforma"));
 		
 		ProdutoDAO dao = new ProdutoDAO();
 		dao.save(produto);
@@ -34,23 +37,34 @@ public class SalvarProduto implements Command {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 
 	private boolean validate(HttpServletRequest request) {
 		boolean valid = true;
 		
-		String descricao = request.getParameter("descricao");
-		if (descricao == null || descricao.isBlank()) {
+		String nome = request.getParameter("nome");
+		if (nome == null || nome.isBlank()) {
 			valid = false;
-			request.setAttribute("erroDescricao", "Este campo não pode ficar em branco.");
+			request.setAttribute("erroNome", "Este campo não pode ficar em branco.");
 		}
+		
+		String tipoMidia = request.getParameter("tipoMidia");
+		if (tipoMidia == null || tipoMidia.isBlank()) {
+			valid = false;
+			request.setAttribute("erroTipoMidia", "Este campo não pode ficar em branco.");
+		}
+		
+		String categoria = request.getParameter("categoria");
+		if (categoria == null || categoria.isBlank()) {
+			valid = false;
+			request.setAttribute("erroCategoria", "Este campo não pode ficar em branco.");
+		}
+		
+		String plataforma = request.getParameter("plataforma");
+		if (plataforma == null || plataforma.isBlank()) {
+			valid = false;
+			request.setAttribute("erroPlataforma", "Este campo não pode ficar em branco.");
+		}
+		
 		
 		try {
 			double preco = Double.parseDouble(request.getParameter("preco"));
