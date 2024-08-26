@@ -20,7 +20,7 @@ public class ProdutoDAO {
 
 			Statement stmt = conn.createStatement();
 			ResultSet rs = stmt.executeQuery(
-					"SELECT id, descricao, preco FROM produto;");
+					"SELECT id, nome, tipoMidia, preco, categoria, plataforma FROM produto;");
 			
 			
 		    while (rs.next()) {
@@ -51,11 +51,14 @@ public class ProdutoDAO {
 		try (Connection conn = DatabaseConnector.getConnection()) {
 			
 			PreparedStatement ps = conn.prepareStatement(
-					"INSERT INTO produto (descricao, preco) VALUES (?, ?);",
+					"INSERT INTO produto (nome, tipoMidia, preco, categoria, plataforma) VALUES (?, ?, ?, ?, ?);",
 					Statement.RETURN_GENERATED_KEYS
 				);
-			ps.setString(1, p.getDescricao());
-			ps.setDouble(2, p.getPreco());
+			ps.setString(1, p.getNome());
+			ps.setString(2, p.getTipoMidia());
+			ps.setDouble(3, p.getPreco());
+			ps.setString(4, p.getCategoria());
+			ps.setString(5, p.getPlataforma());
 			ps.executeUpdate();
 			
 			ResultSet rs = ps.getGeneratedKeys();
@@ -74,10 +77,13 @@ public class ProdutoDAO {
 	private void update(Produto p) throws PersistenceException {
 		try (Connection conn = DatabaseConnector.getConnection()) {
 			
-			PreparedStatement ps = conn.prepareStatement("UPDATE produto SET descricao = ?, preco = ? WHERE id = ?;");
-			ps.setString(1, p.getDescricao());
-			ps.setDouble(2, p.getPreco());
-			ps.setInt(3, p.getId());
+			PreparedStatement ps = conn.prepareStatement("UPDATE produto SET nome = ?, tipoMidia = ?, preco = ?, categoria = ?, plataforma = ? WHERE id = ?;");
+			ps.setString(1, p.getNome());
+			ps.setString(2, p.getTipoMidia());
+			ps.setDouble(3, p.getPreco());
+			ps.setString(4, p.getCategoria());
+			ps.setString(5, p.getPlataforma());
+			ps.setInt(6, p.getId());
 			ps.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -102,7 +108,7 @@ public class ProdutoDAO {
 		
 		try (Connection conn = DatabaseConnector.getConnection()) {
 			
-			PreparedStatement ps = conn.prepareStatement("SELECT id, descricao, preco FROM produto WHERE id = ?;");
+			PreparedStatement ps = conn.prepareStatement("SELECT id, nome, tipoMidia, preco, categoria, plataforma FROM produto WHERE id = ?;");
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			
@@ -123,8 +129,11 @@ public class ProdutoDAO {
 	private Produto mapRow(ResultSet rs) throws SQLException {
 		Produto p = new Produto();
 		p.setId(rs.getInt("id"));
-		p.setDescricao(rs.getString("descricao"));
+		p.setNome(rs.getString("nome"));
+		p.setTipoMidia(rs.getString("tipoMidia"));
 		p.setPreco(rs.getDouble("preco"));
+		p.setCategoria(rs.getString("categoria"));
+		p.setPlataforma(rs.getString("plataforma"));
 		return p;
 	}
 }
