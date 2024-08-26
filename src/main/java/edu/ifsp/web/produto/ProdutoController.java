@@ -52,9 +52,6 @@ public class ProdutoController extends HttpServlet {
 			case "/produto/recuperar":
 				cmd = new RecuperarProduto();
 				break;
-			case "/produto/editar":
-				cmd = new EditarProduto();
-				break;
 			case "/produto/salvar":
 				cmd = new SalvarProduto();
 				break;
