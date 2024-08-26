@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Produtos</title>
+	<link rel="stylesheet" th:href="@{/css/common.css}">
+	
+</head>
+<body>
+<h1>Produto</h1>
+
+	<p>
+		<label>Código: </label>
+		<span th:text="${produto.id}"></span>
+	</p>
+	
+	<p>
+		<label for="descricao">Descrição: </label>
+		<span th:text="${produto.descricao}"></span>
+	</p>
+
+	<p>
+		<label for="preco">Preço: </label>
+		<span th:text="${#numbers.formatCurrency(produto.preco)}"></span>
+	</p>
+
+<p>
+	<a href="listar">Listar todos</a>
+</p>
+
+</body>
+</html>
+
+
+
+

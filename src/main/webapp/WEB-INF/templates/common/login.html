@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>LojaWeb - Login</title>
+	<link rel="stylesheet" th:href="@{/css/common.css}">
+</head>
+<body>
+<h1>Login</h1>
+
+	<div class="flash" th:if="${msg}">
+		<span th:text="${msg}"></span>
+	</div>
+
+	<form action="login" method="post">
+		<p class="error" th:text="${auth_error}" th:if="${auth_error}"></p>
+		
+		<p>
+			<label for="username">Usuário: </label>
+			<input type="text" name="username" id="username" required>
+		</p>
+		
+		<p>
+			<label for="password">Senha: </label>
+			<input type="password" name="password" id="password" required>
+		</p>
+		
+		<button type="submit">Enviar</button>
+	</form>
+	
+	<p>
+		Novo cliente? <a th:href="@{/novo-cliente}">Cadastre-se</a>.
+	</p>
+</body>
+</html>

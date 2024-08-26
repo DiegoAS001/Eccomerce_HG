@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<!--/* 
+	A definição do _namespace_  `xmlns:th`, acima, não é necessária para que o Thymeleaf funcione, 
+	mas faz o Eclipse parar de emitir _warnings_.  
+*/-->
+<head>
+	<meta charset="UTF-8">
+	<title>Produtos</title>
+	
+	<!--/*
+		Na tag `link`, a seguir, observe a notação `th:href="@{/css/common.css}`.
+		Para saber mais sobre o	operador `@{}`, consulte:
+		https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html#link-urls  
+	*/-->
+	<link rel="stylesheet" th:href="@{/css/common.css}">
+	<script th:src="@{/js/carrinho.js}"></script>
+	
+</head>
+<body>
+<h1>Produtos</h1>
+
+	<div class="flash" th:if="${msg}">
+		<span th:text="${msg}"></span>
+	</div>
+	<p>
+		<a th:href="@{/carrinho/visualizar}">Visualizar carrinho</a>
+		<span th:if="${session.carrinho.vazio}"> (vazio)</span>
+	</p>
+
+<table>
+	<tr>
+		<th>Código</th>
+		<th>Descrição</th>
+		<th>Preço</th>
+		<th colspan="2"></th>
+	</tr>
+	
+	<tr th:each="produto: ${produtos}">
+		<td th:text="${produto.id}">1</td>
+		<td th:text="${produto.descricao}">Papel sulfite (teste)</td>
+		<td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
+		<td>
+			<span class="operacao"><a th:href="|editar?id=${produto.id}|">Editar</a></span>
+		</td>
+		<td>
+			<span class="operacao"><a href="#" th:onClick="adicionarCarrinho([[${produto.id}]]);">Adicionar ao carrinho</a></span>
+		</td>
+		
+	</tr>
+</table>
+
+</body>
+</html>
+
+
+
+

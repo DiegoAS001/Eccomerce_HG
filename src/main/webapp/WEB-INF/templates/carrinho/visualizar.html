@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Produtos</title>
+	<link rel="stylesheet" th:href="@{/css/common.css}">
+	
+</head>
+<body>
+	<h1>Carrinho de compras</h1>
+	
+	<table th:unless="${session.carrinho.vazio}">
+		<tr>
+			<th>Descrição</th>
+			<th>Preço</th>
+			<th></th>
+		</tr>
+		
+		<tr th:each="produto, stats: ${session.carrinho.itens}">
+			<td th:text="${produto.descricao}">Papel sulfite (teste)</td>
+			<td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
+			<td>
+				<span class="operacao"><a th:href="@{|/carrinho/remover?idx=${stats.index}|}">Remover</a></span>
+			</td>
+		</tr>
+	</table>
+
+	<p>
+		Valor total: <span th:text="${#numbers.formatCurrency(session.carrinho.total)}"></span><br>
+		<span th:text="${session.carrinho.count}"></span> itens
+	</p>
+	
+	<ul>
+		<li><a th:href="@{/produto/listar}">Listar produtos</a></li>
+		<li th:unless="${session.carrinho.vazio}"><a th:href="@{/carrinho/esvaziar}">Esvaziar carrinho</a></li>
+	</ul>
+</body>
+</html>

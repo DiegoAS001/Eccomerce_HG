@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Produtos</title>
+	<link rel="stylesheet" th:href="@{/css/common.css}">
+	
+</head>
+<body>
+<h1>Novo cliente</h1>
+
+	<form th:action="@{/novo-cliente}" method="post">
+		<p>
+			<label for="username">Nome de usuário: </label>
+			<input type="text" name="username" id="username" required>
+		</p>
+		
+		<p>
+			<label for="password">Senha: </label>
+			<input type="password" name="password" id="password" required>
+		</p>
+		
+		<p>
+			<label for="nome">Nome: </label>
+			<input type="text" name="nome" id="nome" required>
+		</p>
+
+		<p>
+			<label for="email">E-mail: </label>
+			<input type="email" name="email" id="email">
+		</p>
+
+		<p>
+			<label for="cep">CEP: </label>
+			<input type="text" name="cep" id="cep">
+		</p>
+
+		<p>
+			<label for="logradouro">Endereço: </label>
+			<input type="text" name="logradouro" id="logradouro">
+		</p>
+
+		<p>
+			<label for="bairro">Bairro: </label>
+			<input type="text" name="bairro" id="bairro">
+		</p>
+
+		<p>
+			<label for="cidade">Cidade: </label>
+			<input type="text" name="cidade" id="cidade">
+		</p>
+
+		<p>
+			<label for="estado">Estado: </label>
+			<input type="text" name="estado" id="estado">
+		</p>
+
+		<button type="submit">Enviar</button>
+	</form>
+</body>
+</html>

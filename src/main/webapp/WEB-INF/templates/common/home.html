@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>Loja Web</title>
+</head>
+<body>
+	<h1>Loja Web</h1>
+
+	<p>
+		Olá, <span th:text="${session.usuario.username}">anônimo</span>!<br>
+		(<span><a href="logout">Sair</a></span>)
+	</p>
+
+	<p>Menu</p>
+	<ul>
+		<li>
+			<a th:href="@{produto/listar}">Listar produtos</a>
+		</li>
+		<li>
+			<a th:href="@{carrinho/visualizar}">Visualizar carrinho</a>
+			<span th:if="${session.carrinho.vazio}"> (vazio)</span>
+		</li>
+		
+	</ul>
+</body>
+</html>
