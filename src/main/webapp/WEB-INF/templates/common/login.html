@@ -7,6 +7,12 @@
 </head>
 <body>
 <h1>Login</h1>
+	<title>Haven Geek</title>
+	<link rel="stylesheet" th:href="@{/css/login.css}">
+</head>
+<body>
+<h1>Bem vindo ao Haven Geek</h1>
+
 
 	<div class="flash" th:if="${msg}">
 		<span th:text="${msg}"></span>
@@ -25,11 +31,19 @@
 			<input type="password" name="password" id="password" required>
 		</p>
 		
+<<<<<<< HEAD
 		<button type="submit">Enviar</button>
 	</form>
 	
 	<p>
 		Novo cliente? <a th:href="@{/novo-cliente}">Cadastre-se</a>.
+=======
+		<button type="submit">Entrar</button>
+	</form>
+	
+	<p>
+		Não possui cadastro? <a th:href="@{/novo-cliente}">Cadastre-se</a>.
+>>>>>>> cb5ff63 (Criando os css's cadastro.css e login.css)
 	</p>
 </body>
 </html>

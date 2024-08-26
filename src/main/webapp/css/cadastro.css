@@ -1,0 +1,105 @@
+/* Definição básica de cores e fontes para acessibilidade */
+body {
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte legível */
+    text-align: center; /* Centraliza todo o conteúdo */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #1E90FF; /* Azul claro para o título */
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+p {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Estilo para links */
+a {
+    color: #FFD700; /* Cor dourada para links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Destaca os links com negrito */
+}
+
+a:hover {
+    color: #00FF00; /* Cor verde para links quando o cursor passa sobre eles */
+    text-decoration: underline; /* Sublinhado quando o cursor passa sobre o link */
+}
+
+/* Estilos para formulários */
+form {
+    display: inline-block; /* Centraliza o formulário */
+    background-color: #1C1C1C; /* Fundo cinza escuro para o formulário */
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left; /* Alinha o texto à esquerda para acessibilidade */
+    max-width: 400px; /* Define um tamanho máximo para o formulário */
+    width: 90%; /* Define a largura do formulário como 90% da tela */
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-weight: bold; /* Texto em negrito para rótulos */
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%; /* Ajusta a largura para preencher o formulário sem exceder */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 2px solid #1E90FF; /* Borda azul claro */
+    border-radius: 5px;
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    font-size: 1em;
+    box-sizing: border-box; /* Inclui o padding na largura total */
+}
+
+/* Estilo para o botão de envio */
+button {
+    width: 100%; /* Botão preenche a largura do formulário */
+    padding: 10px;
+    background-color: #1E90FF; /* Azul claro */
+    color: #FFFFFF; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    font-weight: bold; /* Texto em negrito para o botão */
+}
+
+button:hover {
+    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Adiciona foco aos campos de entrada */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    border-color: #1E90FF; /* Borda azul claro no foco */
+    outline: none; /* Remove o contorno padrão do navegador */
+}
+
+/* Estilo para rótulos */
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+    font-size: 1em;
+}
+
+/* Estilo adicional para links */
+a:visited {
+    color: #B8860B; /* Cor ouro velho para links visitados */
+}
