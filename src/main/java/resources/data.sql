@@ -24,7 +24,7 @@ values (2, 'Lucas Hudson', 'lucas@gmail.com', 'Rua Francisco Pera', 'Jardim Tuli
 insert into carrinho_item (usuario, produto) values (1, 1);
 insert into carrinho_item (usuario, produto) values (1, 3);
 
-SELECT u.username, p.descricao FROM carrinho_item c, usuario u, produto p WHERE c.usuario = u.id AND c.produto = p.id;
+SELECT u.username, p.nome FROM carrinho_item c, usuario u, produto p WHERE c.usuario = u.id AND c.produto = p.id;
 select * from usuario;
 select * from cliente;
 select * from produto;
