@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Produtos</title>
+	<title>Haven Geek</title>
 	<link rel="stylesheet" th:href="@{/css/common.css}">
 	
 </head>
@@ -11,13 +11,13 @@
 	
 	<table th:unless="${session.carrinho.vazio}">
 		<tr>
-			<th>Descrição</th>
+			<th>Nome</th>
 			<th>Preço</th>
 			<th></th>
 		</tr>
 		
 		<tr th:each="produto, stats: ${session.carrinho.itens}">
-			<td th:text="${produto.descricao}">Papel sulfite (teste)</td>
+			<td th:text="${produto.nome}">Jogo (teste)</td>
 			<td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
 			<td>
 				<span class="operacao"><a th:href="@{|/carrinho/remover?idx=${stats.index}|}">Remover</a></span>
@@ -33,6 +33,7 @@
 	<ul>
 		<li><a th:href="@{/produto/listar}">Listar produtos</a></li>
 		<li th:unless="${session.carrinho.vazio}"><a th:href="@{/carrinho/esvaziar}">Esvaziar carrinho</a></li>
+		<li><a th:href="@{/produto/listar}">Finalizar Compra</a></li>
 	</ul>
 </body>
 </html>

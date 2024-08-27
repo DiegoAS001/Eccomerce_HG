@@ -1,0 +1,50 @@
+/* Definição básica de cores e fontes para acessibilidade */
+body {
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte legível */
+    text-align: center; /* Centraliza todo o conteúdo */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #1E90FF; /* Azul claro para o título */
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+/* Estilo para parágrafos e spans */
+p {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+span {
+    color: #FFD700; /* Dourado para destacar o nome de usuário */
+}
+
+/* Estilo para links */
+a {
+    color: #FFD700; /* Cor dourada para links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Destaca os links com negrito */
+}
+
+a:hover {
+    color: #00FF00; /* Cor verde para links quando o cursor passa sobre eles */
+    text-decoration: underline; /* Sublinhado quando o cursor passa sobre o link */
+}
+
+/* Estilo para a lista de menu */
+ul {
+    list-style-type: none; /* Remove marcadores da lista */
+    padding: 0;
+    margin-top: 20px;
+}
+
+li {
+    margin: 10px 0; /* Espaçamento entre os itens da lista */
+}
+

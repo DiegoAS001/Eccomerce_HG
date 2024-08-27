@@ -6,7 +6,7 @@ use loja;
 create table produto (
         id int not null auto_increment,
         nome varchar(40),
-        tipoMidia varchar(1),
+        tipoMidia varchar(10),
         preco decimal(8, 2),
         categoria varchar(10),
         plataforma varchar(15),

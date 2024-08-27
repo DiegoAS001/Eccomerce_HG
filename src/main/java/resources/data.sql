@@ -1,23 +1,20 @@
 INSERT INTO produto (nome, tipoMidia, preco, categoria, plataforma) VALUES
-('The Last of Us Part II', 'D', 59.99, 'Ação', 'Console'),
-('Minecraft', 'D', 29.99, 'Aventura', 'PC'),
-('Red Dead Redemption 2', 'D', 49.99, 'Aventura', 'Console'),
-('Cyberpunk 2077', 'D', 39.99, 'RPG', 'PC'),
-('Gran Turismo 7', 'D', 69.99, 'Corrida', 'Console'),
-('The Last of Us Part II', 'F', 59.99, 'Ação', 'Console'),
-('Minecraft', 'D', 29.99, 'Aventura', 'PC'),
-('Red Dead Redemption 2', 'D', 49.99, 'Aventura', 'Console'),
-('Cyberpunk 2077', 'D', 39.99, 'RPG', 'PC'),
-('Gran Turismo 7', 'F', 69.99, 'Corrida', 'Console'),
-('Hades', 'D', 24.99, 'Roguelike', 'PC'),
-('God of War', 'D', 39.99, 'Ação', 'Console'),
-('Assassin s Creed Valhalla', 'D', 59.99, 'Ação', 'PC'),
-('FIFA 23', 'D', 49.99, 'Esporte', 'Console'),
-('The Witcher 3: Wild Hunt', 'D', 29.99, 'RPG', 'PC');
-('The Witcher 3: Wild Hunt', 'F', 29.99, 'RPG', 'PC');
+('The Last of Us Part II', 'Digital', 59.99, 'Ação', 'Console'),
+('Minecraft', 'Digital', 29.99, 'Aventura', 'PC'),
+('Red Dead Redemption 2', 'Fisica', 49.99, 'Aventura', 'Console'),
+('Cyberpunk 2077', 'Digital', 39.99, 'RPG', 'PC'),
+('Gran Turismo 7', 'Fisica', 69.99, 'Corrida', 'Console'),
+('The Last of Us Part II', 'Fisica', 59.99, 'Ação', 'Console'),
+('Minecraft', 'Digital', 29.99, 'Aventura', 'PC'),
+('Red Dead Redemption 2', 'Digital', 49.99, 'Aventura', 'Console'),
+('Cyberpunk 2077', 'Digital', 39.99, 'RPG', 'PC'),
+('Gran Turismo 7', 'Fisica', 69.99, 'Corrida', 'Console'),
+('Hades', 'Digital', 24.99, 'Roguelike', 'PC'),
+('God of War', 'Fisica', 39.99, 'Ação', 'Console'),
+('Assassin s Creed Valhalla', 'Digital', 59.99, 'Ação', 'PC'),
+('FIFA 23', 'Digital', 49.99, 'Esporte', 'Console'),
+('The Witcher 3: Wild Hunt', 'Fisica', 29.99, 'RPG', 'PC');
 
-
-  
 INSERT INTO usuario (username, password, salt) VALUES ('das', '1db6b248784f7866500bd34571f2a60fbd3b743e', 'c3ec5fcc-4148-4b2a-86fd-b6b4c9fe928c');
 INSERT INTO usuario (username, password, salt) VALUES ('luc', '2af95119c8c3a604b457ce7c4b17c9fdf2dcc034', '78ae0789-9ad5-4f0a-bc2d-20447e2b295c');
 

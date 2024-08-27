@@ -1,0 +1,133 @@
+/* Definição básica de cores e fontes para acessibilidade */
+body {
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte legível */
+    text-align: center; /* Centraliza todo o conteúdo */
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    color: #1E90FF; /* Azul claro para o título */
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+p {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+/* Estilo para links */
+a {
+    color: #FFD700; /* Cor dourada para links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Destaca os links com negrito */
+}
+
+a:hover {
+    color: #00FF00; /* Cor verde para links quando o cursor passa sobre eles */
+    text-decoration: underline; /* Sublinhado ao passar o cursor sobre o link */
+}
+
+/* Estilo para a tabela */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #1C1C1C; /* Fundo cinza escuro para a tabela */
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #1E90FF; /* Borda azul claro */
+    text-align: left;
+    color: #FFFFFF; /* Texto branco */
+}
+
+th {
+    background-color: #104E8B; /* Azul mais escuro para os cabeçalhos */
+    font-weight: bold;
+}
+
+td a {
+    color: #FFD700; /* Links dourados dentro da tabela */
+    text-decoration: none;
+}
+
+td a:hover {
+    color: #00FF00; /* Cor verde ao passar o cursor */
+    text-decoration: underline;
+}
+
+/* Estilo para mensagens flash */
+.flash {
+    background-color: #444444; /* Fundo cinza escuro */
+    color: #FFFFFF; /* Texto branco */
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Estilo para operações */
+.operacao {
+    text-align: center;
+}
+
+/* Estilo para formulários e campos de entrada */
+form {
+    display: inline-block; /* Centraliza o formulário */
+    background-color: #1C1C1C; /* Fundo cinza escuro */
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    text-align: left; /* Alinha o texto à esquerda dentro dos campos */
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #FFFFFF;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: calc(100% - 22px); /* Largura do campo menos o padding e borda */
+    padding: 10px;
+    border: 2px solid #1E90FF; /* Borda azul claro */
+    border-radius: 5px;
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center; /* Centraliza o texto dentro dos campos */
+}
+
+button {
+    width: 100%; /* Botão preenche a largura do formulário */
+    padding: 10px;
+    background-color: #1E90FF; /* Azul claro */
+    color: #FFFFFF; /* Texto branco */
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center; /* Centraliza o texto dentro do botão */
+}
+
+button:hover {
+    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 0.9em;
+    }
+}
