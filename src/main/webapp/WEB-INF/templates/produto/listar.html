@@ -14,7 +14,7 @@
     <span th:text="${msg}"></span>
 </div>
 <p>
-    <a th:href="@{/carrinho/visualizar}">Visualizar carrinho</a>
+    <a th:href="@{/carrinho/visualizar}" class="button">Visualizar carrinho</a>
     <span th:if="${session.carrinho.vazio}"> (vazio)</span>
 </p>
 
@@ -46,7 +46,7 @@
         <td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
         <td>
             <span class="operacao">
-                <a href="#" th:onClick="adicionarCarrinho([[${produto.id}]]);">Adicionar ao carrinho</a>
+                <a href="#" th:onClick="adicionarCarrinho([[${produto.id}]]);" class="button">Adicionar ao carrinho</a>
             </span>
         </td>
     </tr>
