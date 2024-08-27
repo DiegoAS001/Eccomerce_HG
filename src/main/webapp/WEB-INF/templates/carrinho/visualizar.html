@@ -1,45 +1,60 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-	<meta charset="UTF-8">
-	<title>Haven Geek</title>
-	<link rel="stylesheet" th:href="@{/css/carrinho.css}">
-	
+    <meta charset="UTF-8">
+    <title>Haven Geek</title>
+    <link rel="stylesheet" th:href="@{/css/carrinho.css}">
 </head>
 <body>
-	<h1>Carrinho de compras</h1>
-	
-	<table th:unless="${session.carrinho.vazio}">
-		<tr>
-			<th>Nome</th>
-			<th>Tipo de midia</th>
-			<th>Categoria</th>
-			<th>Plataforma</th>
-			<th>Preço</th>
-			<th></th>
-		</tr>
-		
-		<tr th:each="produto, stats: ${session.carrinho.itens}">
-			<td th:text="${produto.nome}">Jogo (teste)</td>
-			<td th:text="${produto.tipoMidia}">Midia (teste)</td>
-			<td th:text="${produto.categoria}">Categoria (teste)</td>
-			<td th:text="${produto.plataforma}">Plataforma (teste)</td>
-			<td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
-			<td>
-				<span class="operacao"><a th:href="@{|/carrinho/remover?idx=${stats.index}|}">Remover</a></span>
-			</td>
-		</tr>
-	</table>
+    <h1>Carrinho de compras</h1>
+    
+    <table th:unless="${session.carrinho.vazio}">
+        <tr>
+            <th>Imagem</th>
+            <th>Nome</th>
+            <th>Tipo de mídia</th>
+            <th>Categoria</th>
+            <th>Plataforma</th>
+            <th>Preço</th>
+            <th></th>
+        </tr>
+        
+        <tr th:each="produto, stats : ${session.carrinho.itens}">
+            <td>
+                <img 
+                    th:src="@{/imagens/{id}.jpg(id=${produto.id})}" 
+                    th:alt="${produto.nome}" 
+                    th:title="${produto.nome}" 
+                    width="100" 
+                    height="100"
+                >
+            </td>
+            <td th:text="${produto.nome}">Jogo (teste)</td>
+            <td th:text="${produto.tipoMidia}">Mídia (teste)</td>
+            <td th:text="${produto.categoria}">Categoria (teste)</td>
+            <td th:text="${produto.plataforma}">Plataforma (teste)</td>
+            <td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
+            <td>
+                <span class="operacao"><a th:href="@{|/carrinho/remover?idx=${stats.index}|}">Remover</a></span>
+            </td>
+        </tr>
+    </table>
 
-	<p>
-		Valor total: <span th:text="${#numbers.formatCurrency(session.carrinho.total)}"></span><br>
-		<span th:text="${session.carrinho.count}"></span> itens
-	</p>
-	
-	<ul>
-		<li><a th:href="@{/produto/listar}">Listar produtos</a></li>
-		<li th:unless="${session.carrinho.vazio}"><a th:href="@{/carrinho/esvaziar}">Esvaziar carrinho</a></li>
-		<li><a th:href="@{/produto/listar}">Finalizar Compra</a></li>
-	</ul>
+    <div class="info">
+        <p>
+            Valor total: <span th:text="${#numbers.formatCurrency(session.carrinho.total)}"></span>
+        </p>
+        <p>
+            Comprando <span th:text="${session.carrinho.count}"></span> itens
+        </p>
+    </div>
+
+    <div class="actions">
+        <a th:href="@{/produto/listar}" class="button">Listar produtos</a>
+        <a th:if="${!session.carrinho.vazio}" th:href="@{/carrinho/esvaziar}" class="button">Esvaziar carrinho</a>
+         <a th:href="@{/finalizar-compra}" class="button checkout-button">Finalizar Compra</a>
+    </div>
+
+   
 </body>
 </html>

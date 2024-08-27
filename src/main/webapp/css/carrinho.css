@@ -3,21 +3,24 @@ body {
     background-color: #000000; /* Fundo preto */
     color: #FFFFFF; /* Texto branco */
     font-family: Arial, sans-serif; /* Fonte legível */
-    text-align: center; /* Centraliza o conteúdo */
     margin: 0;
     padding: 0;
 }
 
+/* Estilo para o título */
 h1 {
     color: #1E90FF; /* Azul claro para o título */
     margin-top: 20px;
     font-size: 2em;
+    text-align: center; /* Centraliza o título */
 }
 
+/* Estilo para parágrafos */
 p {
     color: #FFFFFF;
     font-size: 1.2em;
     line-height: 1.5;
+    text-align: center; /* Centraliza o texto */
 }
 
 /* Estilo para links */
@@ -67,48 +70,43 @@ td a:hover {
     text-align: center;
 }
 
-/* Estilo para formulários e campos de entrada */
-form {
-    display: inline-block; /* Centraliza o formulário */
-    background-color: #1C1C1C; /* Fundo cinza escuro */
-    padding: 20px;
-    border-radius: 10px;
-    margin: 20px auto;
-    text-align: left; /* Alinha o texto à esquerda dentro dos campos */
+/* Estilo para a área de informações */
+.info {
+    text-align: center; /* Centraliza o texto */
+    margin: 20px 0; /* Espaçamento vertical */
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #FFFFFF;
+/* Estilo para a área de ações */
+.actions {
+    text-align: center; /* Centraliza os links */
+    margin: 20px 0; /* Espaçamento vertical */
 }
 
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-    width: calc(100% - 22px); /* Largura do campo menos o padding e borda */
-    padding: 10px;
-    border: 2px solid #1E90FF; /* Borda azul claro */
-    border-radius: 5px;
-    background-color: #000000; /* Fundo preto */
-    color: #FFFFFF; /* Texto branco */
-    text-align: center; /* Centraliza o texto dentro dos campos */
-}
-
-button {
-    width: 100%; /* Botão preenche a largura do formulário */
-    padding: 10px;
+.actions .button {
+    display: inline-block;
+    padding: 10px 20px;
     background-color: #1E90FF; /* Azul claro */
     color: #FFFFFF; /* Texto branco */
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    text-align: center; /* Centraliza o texto dentro do botão */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento entre os botões */
 }
 
-button:hover {
+.actions .button:hover {
     background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Estilo para o botão de finalizar compra */
+.checkout {
+    text-align: right; /* Alinha o botão à direita */
+    margin: 20px 10%; /* Espaçamento superior e lateral */
+}
+
+.checkout .checkout-button {
+    background-color: #FF4500; /* Laranja para o botão de finalizar compra */
+    color: #FFFFFF; /* Texto branco */
 }
 
 /* Responsividade */
