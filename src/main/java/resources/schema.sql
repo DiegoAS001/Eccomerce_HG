@@ -42,3 +42,14 @@ create table carrinho_item (
 	primary key (id)
 );
 
+create table cartao(
+	id int not null auto_increment,
+    nome varchar(40) not null,
+    numero varchar(40) not null,
+    cvv int (3) not null,
+    data_vencimento varchar(5) not null,
+    primary key (id)
+);
+
+-- drop table cartao;
+
