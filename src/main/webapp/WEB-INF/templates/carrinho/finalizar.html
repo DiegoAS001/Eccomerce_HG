@@ -6,10 +6,9 @@
     <link rel="stylesheet" th:href="@{/css/carrinho.css}">
 </head>
 <body>
-    <h1>Finalizando compra</h1>
+    <h1>Finalizando Compra</h1>
 
-
-	<div class="info">
+    <div class="info">
         <p>
             Valor total: <span th:text="${#numbers.formatCurrency(session.carrinho.total)}"></span>
         </p>
@@ -18,9 +17,26 @@
         </p>
     </div>
     
+    <!-- Formulário para escolha de pagamento -->
+    <div class="payment-form">
+        <form th:action="@{/cadastro-cartao}" method="post">
+            <h2>Escolha o método de pagamento</h2>
+            <label for="payment-method-credit">Cartão de Crédito</label>
+            <input type="radio" id="payment-method-credit" name="payment-method" value="credit" checked>
+            
+            <label for="payment-method-debit">Cartão de Débito</label>
+            <input type="radio" id="payment-method-debit" name="payment-method" value="debit">
+            
+            <label for="payment-method-paypal">PayPal</label>
+            <input type="radio" id="payment-method-paypal" name="payment-method" value="paypal">
+            
+            <button type="submit" class="button">Finalizar Compra</button>
+        </form>
+    </div>
+
     <div class="actions">
-        <a th:href="@{/home}" class="button checkout-button">Inicio</a>
+        <a th:href="@{/home}" class="button checkout-button">Início</a>
     </div>
     
-    </body>
+</body>
 </html>
