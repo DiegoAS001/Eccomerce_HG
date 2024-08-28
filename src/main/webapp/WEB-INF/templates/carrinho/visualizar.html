@@ -52,7 +52,7 @@
     <div class="actions">
         <a th:href="@{/produto/listar}" class="button">Listar produtos</a>
         <a th:if="${!session.carrinho.vazio}" th:href="@{/carrinho/esvaziar}" class="button">Esvaziar carrinho</a>
-        <a th:href="@{/CarrinhoFinalizar}" class="button checkout-button">Finalizar Compra</a>
+        <a th:href="@{/CarrinhoFinalizar}" class="button checkout-button">Comprar</a>
         <a th:href="@{/home}" class="button checkout-button">Inicio</a>
     </div>
 
