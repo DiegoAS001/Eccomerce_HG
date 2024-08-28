@@ -1,0 +1,114 @@
+/* Definição básica de cores e fontes para acessibilidade */
+body {
+    background-color: #000000; /* Fundo preto */
+    color: #FFFFFF; /* Texto branco */
+    font-family: Arial, sans-serif; /* Fonte legível */
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para o título */
+h1 {
+    color: #1E90FF; /* Azul claro para o título */
+    margin-top: 20px;
+    font-size: 2em;
+    text-align: center; /* Centraliza o título */
+}
+
+/* Estilo para parágrafos */
+p {
+    color: #FFFFFF;
+    font-size: 1.2em;
+    line-height: 1.5;
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para links */
+a {
+    color: #FFD700; /* Cor dourada para links */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Destaca os links com negrito */
+}
+
+a:hover {
+    color: #00FF00; /* Cor verde para links quando o cursor passa sobre eles */
+    text-decoration: underline; /* Sublinhado ao passar o cursor sobre o link */
+}
+
+/* Estilo para links transformados em botões */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1E90FF; /* Azul claro */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento entre os botões */
+}
+
+a.button:hover {
+    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Estilo para o botão de finalizar compra */
+button.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1E90FF; /* Azul claro para o botão de finalizar compra */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento entre os botões */
+    border: none; /* Remove a borda padrão do botão */
+    cursor: pointer; /* Cursor de ponteiro ao passar o mouse */
+}
+
+button.button:hover {
+    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Estilo para o formulário de pagamento */
+.payment-form {
+    text-align: center; /* Centraliza o formulário */
+    margin: 20px;
+}
+
+.payment-options label {
+    display: block;
+    margin: 10px 0;
+    color: #FFFFFF;
+    font-size: 1.2em;
+}
+
+.payment-options input[type="radio"] {
+    margin-right: 10px;
+}
+
+/* Estilo para a área de ações */
+.actions {
+    text-align: center; /* Centraliza os links e botões */
+    margin: 20px 0; /* Espaçamento vertical */
+}
+
+/* Estilo para a nova página de confirmação */
+.confirmacao-compra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.confirmacao-compra h1 {
+    font-size: 2em;
+    color: #1E90FF;
+}
+
+.confirmacao-compra .button {
+    margin-top: 20px;
+}
