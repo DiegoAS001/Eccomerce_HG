@@ -23,19 +23,36 @@ p {
     text-align: center; /* Centraliza o texto */
 }
 
-/* Estilo para links padrão */
-a:not(.button) {
+/* Estilo para links */
+a {
     color: #FFD700; /* Cor dourada para links */
     text-decoration: none; /* Remove o sublinhado dos links */
     font-weight: bold; /* Destaca os links com negrito */
 }
 
-a:not(.button):hover {
+a:hover {
     color: #00FF00; /* Cor verde para links quando o cursor passa sobre eles */
     text-decoration: underline; /* Sublinhado ao passar o cursor sobre o link */
 }
 
-/* Estilo para a tabela */
+/* Estilo para links transformados em botões */
+a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1E90FF; /* Azul claro */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento entre os botões */
+}
+
+a.button:hover {
+    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Estilos para tabelas */
 table {
     width: 80%;
     margin: 20px auto;
@@ -55,22 +72,27 @@ th {
     font-weight: bold;
 }
 
-/* Estilo para operações */
-.operacao {
-    text-align: center;
+td a {
+    color: #FFD700; /* Links dourados dentro da tabela */
+    text-decoration: none; /* Remove o sublinhado */
 }
 
-/* Estilo para a área de informações */
-.info {
-    text-align: center; /* Centraliza o texto */
+td a:hover {
+    color: #00FF00; /* Cor verde ao passar o cursor */
+    text-decoration: underline; /* Sublinhado ao passar o cursor */
+}
+
+/* Estilo para a área de ações */
+.actions {
+    text-align: center; /* Centraliza os links e botões */
     margin: 20px 0; /* Espaçamento vertical */
 }
 
-/* Estilo para botões */
-.button {
+/* Estilo para o botão de finalizar compra */
+.checkout-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #1E90FF; /* Azul claro */
+    background-color: #FF4500; /* Laranja para o botão de finalizar compra */
     color: #FFFFFF; /* Texto branco */
     text-align: center; /* Centraliza o texto */
     text-decoration: none; /* Remove o sublinhado */
@@ -79,19 +101,8 @@ th {
     margin: 5px; /* Espaçamento entre os botões */
 }
 
-.button:hover {
-    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
-}
-
-/* Estilo para o botão de finalizar compra */
-.checkout {
-    text-align: right; /* Alinha o botão à direita */
-    margin: 20px 10%; /* Espaçamento superior e lateral */
-}
-
-.checkout .checkout-button {
-    background-color: #FF4500; /* Laranja para o botão de finalizar compra */
-    color: #FFFFFF; /* Texto branco */
+.checkout-button:hover {
+    background-color: #FF6347; /* Tomate mais claro ao passar o cursor */
 }
 
 /* Responsividade */

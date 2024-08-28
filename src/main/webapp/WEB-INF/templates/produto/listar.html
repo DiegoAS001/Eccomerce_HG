@@ -3,54 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <title>Haven Geek</title>
-    
     <link rel="stylesheet" th:href="@{/css/produto.css}">
     <script th:src="@{/js/carrinho.js}"></script>
 </head>
 <body>
-<h1>Produtos</h1>
+    <h1>Produtos</h1>
 
-<div class="flash" th:if="${msg}">
-    <span th:text="${msg}"></span>
-</div>
-<p>
-    <a th:href="@{/carrinho/visualizar}" class="button">Visualizar carrinho</a>
-    <span th:if="${session.carrinho.vazio}"> (vazio)</span>
-</p>
+    <div class="flash" th:if="${msg}">
+        <span th:text="${msg}"></span>
+    </div>
 
-<table>
-    <tr>
-        <th>Imagem</th> <!-- Cabeçalho da coluna para a imagem -->
-        <th>Nome</th>
-        <th>Tipo de mídia</th>
-        <th>Categoria</th>
-        <th>Plataforma</th>
-        <th>Preço</th>
-        <th colspan="2"></th>
-    </tr>
-    
-    <tr th:each="produto: ${produtos}">
-        <td>
-            <img 
-                th:src="@{/imagens/{id}.jpg(id=${produto.id})}" 
-                th:alt="${produto.nome}" 
-                th:title="${produto.nome}" 
-                width="100" 
-                height="100"
-            >
-        </td> <!-- Coluna da imagem com descrição do produto -->
-        <td th:text="${produto.nome}">Jogo (teste)</td>
-        <td th:text="${produto.tipoMidia}">Física (teste)</td>
-        <td th:text="${produto.categoria}">Luta (teste)</td>
-        <td th:text="${produto.plataforma}">Console (teste)</td>
-        <td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
-        <td>
-            <span class="operacao">
-                <a href="#" th:onClick="adicionarCarrinho([[${produto.id}]]);" class="button">Adicionar ao carrinho</a>
-            </span>
-        </td>
-    </tr>
-</table>
+    <p>
+        <a th:href="@{/carrinho/visualizar}" class="button">Visualizar carrinho</a>
+        <a th:href="@{/home}" class="button">Início</a> <!-- Botão "Início" estilizado -->
+        <span th:if="${session.carrinho.vazio}"> (vazio)</span>
+    </p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Imagem</th> <!-- Cabeçalho da coluna para a imagem -->
+                <th>Nome</th>
+                <th>Tipo de mídia</th>
+                <th>Categoria</th>
+                <th>Plataforma</th>
+                <th>Preço</th>
+                <th colspan="2"></th> <!-- Cabeçalho da coluna para ações -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="produto : ${produtos}">
+                <td>
+                    <img 
+                        th:src="@{/imagens/{id}.jpg(id=${produto.id})}" 
+                        th:alt="${produto.nome}" 
+                        th:title="${produto.nome}" 
+                        width="100" 
+                        height="100"
+                    >
+                </td> <!-- Coluna da imagem com descrição do produto -->
+                <td th:text="${produto.nome}">Jogo (teste)</td>
+                <td th:text="${produto.tipoMidia}">Física (teste)</td>
+                <td th:text="${produto.categoria}">Luta (teste)</td>
+                <td th:text="${produto.plataforma}">Console (teste)</td>
+                <td th:text="${#numbers.formatCurrency(produto.preco)}" class="monetario">0.00</td>
+                <td>
+                    <a href="#" th:onClick="adicionarCarrinho([[${produto.id}]]);" class="button">Adicionar ao carrinho</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>

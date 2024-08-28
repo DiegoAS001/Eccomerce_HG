@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Haven Geek</title>
+    <link rel="stylesheet" th:href="@{/css/carrinho.css}">
+</head>
+<body>
+    <h1>Finalizando compra</h1>
+
+
+	<div class="info">
+        <p>
+            Valor total: <span th:text="${#numbers.formatCurrency(session.carrinho.total)}"></span>
+        </p>
+        <p>
+            Comprando <span th:text="${session.carrinho.count}"></span> itens
+        </p>
+    </div>
+    
+    <div class="actions">
+        <a th:href="@{/home}" class="button checkout-button">Inicio</a>
+    </div>
+    
+    </body>
+</html>

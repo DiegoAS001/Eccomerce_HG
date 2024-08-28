@@ -4,47 +4,6 @@
     <meta charset="UTF-8">
     <title>Haven Geek</title>
     <link rel="stylesheet" th:href="@{/css/home.css}">
-    <style>
-        /* CSS Inline para exemplo, deve ser movido para o arquivo home.css */
-        body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da página */
-            margin: 0;
-        }
-        .content {
-            flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
-            text-align: center; /* Centraliza o conteúdo */
-        }
-        .menu {
-            display: flex; /* Disposição dos itens em linha */
-            justify-content: center; /* Centraliza os itens horizontalmente */
-            list-style-type: none; /* Remove os marcadores de lista */
-            padding: 0; /* Remove o espaçamento interno padrão */
-        }
-        .menu li {
-            margin: 0 10px; /* Espaçamento entre os itens */
-        }
-        .logout-button {
-            display: block; /* Faz o link ocupar toda a linha */
-            margin: 20px auto; /* Espaçamento superior e centralização */
-            padding: 10px 20px; /* Espaçamento interno do botão */
-            background-color: #1E90FF; /* Cor de fundo azul claro */
-            color: #FFFFFF; /* Texto branco */
-            text-align: center; /* Centraliza o texto */
-            text-decoration: none; /* Remove o sublinhado */
-            border-radius: 5px; /* Borda arredondada */
-            font-weight: bold; /* Texto em negrito */
-            width: 100px; /* Largura fixa para o botão */
-        }
-        .logout-button:hover {
-            background-color: #104E8B; /* Cor azul mais escura ao passar o mouse */
-        }
-        footer {
-            margin-top: auto; /* Empurra o rodapé para o final da página */
-            padding-bottom: 10px; /* Espaçamento inferior para o botão */
-        }
-    </style>
 </head>
 <body>
     <div class="content">
@@ -52,24 +11,32 @@
         
         <!-- Mensagem de boas-vindas movida acima dos links -->
         <p>
-            Bem vindo ao seu portal de Jogos, <span th:text="${session.usuario.username}">anônimo</span>!
+            Bem-vindo ao seu portal de Jogos, <span th:text="${session.usuario.username}">anônimo</span>!
         </p>
 
         <ul class="menu">
             <li>
-                <a th:href="@{produto/listar}">Listar produtos</a>
+                <a href="#" class="button" th:href="@{produto/listar}">Listar produtos</a>
             </li>
+            
             <li>
-                <a th:href="@{carrinho/visualizar}">Visualizar carrinho</a>
+                <a href="#" class="button" th:href="@{cartao/cadastro}">Cadastrar Cartão</a>
+            </li>
+            
+            <li>
+                <a href="#" class="button" th:href="@{carrinho/visualizar}">Visualizar carrinho</a>
                 <span th:if="${session.carrinho.vazio}"> (vazio)</span>
             </li>
         </ul>
+        
+        <!-- Adiciona imagem centralizada na tela -->
+        <div class="image-container">
+            <img src="imagens/logo.png" alt="Imagem" class="menu-image">
+        </div>
     </div>
     
     <footer>
-        <a href="logout" class="logout-button">Sair</a>
+        <a href="logout" class="button logout-button">Sair</a>
     </footer>
 </body>
 </html>
-
-

@@ -3,48 +3,105 @@ body {
     background-color: #000000; /* Fundo preto */
     color: #FFFFFF; /* Texto branco */
     font-family: Arial, sans-serif; /* Fonte legível */
-    text-align: center; /* Centraliza todo o conteúdo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o conteúdo ocupe toda a altura da página */
     margin: 0;
-    padding: 0;
 }
 
+/* Estilo para o título */
 h1 {
     color: #1E90FF; /* Azul claro para o título */
     margin-top: 20px;
     font-size: 2em;
+    text-align: center; /* Centraliza o título */
 }
 
-/* Estilo para parágrafos e spans */
+/* Estilo para parágrafos */
 p {
     color: #FFFFFF;
     font-size: 1.2em;
     line-height: 1.5;
+    text-align: center; /* Centraliza o texto */
 }
 
-span {
-    color: #FFD700; /* Dourado para destacar o nome de usuário */
-}
-
-/* Estilo para links */
-a {
+/* Estilo para links padrão */
+a:not(.button) {
     color: #FFD700; /* Cor dourada para links */
     text-decoration: none; /* Remove o sublinhado dos links */
     font-weight: bold; /* Destaca os links com negrito */
 }
 
-a:hover {
+a:not(.button):hover {
     color: #00FF00; /* Cor verde para links quando o cursor passa sobre eles */
-    text-decoration: underline; /* Sublinhado quando o cursor passa sobre o link */
+    text-decoration: underline; /* Sublinhado ao passar o cursor sobre o link */
 }
 
 /* Estilo para a lista de menu */
-ul {
-    list-style-type: none; /* Remove marcadores da lista */
-    padding: 0;
-    margin-top: 20px;
+ul.menu {
+    list-style-type: none; /* Remove os marcadores de lista */
+    padding: 0; /* Remove o espaçamento interno padrão */
+    display: flex; /* Disposição dos itens em linha */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    gap: 20px; /* Espaçamento entre os itens */
 }
 
-li {
-    margin: 10px 0; /* Espaçamento entre os itens da lista */
+ul.menu li {
+    margin: 0; /* Remove o espaçamento entre os itens */
 }
 
+/* Estilo para botões */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #1E90FF; /* Azul claro */
+    color: #FFFFFF; /* Texto branco */
+    text-align: center; /* Centraliza o texto */
+    text-decoration: none; /* Remove o sublinhado */
+    border-radius: 5px; /* Borda arredondada */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento entre os botões */
+}
+
+.button:hover {
+    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+}
+
+/* Estilo para o botão de finalizar compra */
+.logout-button {
+    display: block; /* Faz o link ocupar toda a linha */
+    width: 100px; /* Largura fixa para o botão */
+    margin: 20px auto; /* Espaçamento superior e centralização */
+    padding: 10px; /* Espaçamento interno do botão */
+}
+
+/* Estilo para a imagem no menu */
+.image-container {
+    display: flex; /* Usa Flexbox para centralizar a imagem */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    height: 50vh; /* Altura da imagem como 50% da altura da tela */
+    margin: 20px 0; /* Espaçamento superior e inferior */
+}
+
+.menu-image {
+    max-width: 80%; /* Largura máxima da imagem como 80% da tela */
+    max-height: 100%; /* Altura máxima da imagem como 100% da altura do container */
+    height: auto; /* Ajusta a altura proporcionalmente */
+}
+
+/* Estilo para o rodapé */
+footer {
+    margin-top: auto; /* Empurra o rodapé para o final da página */
+    padding: 10px; /* Espaçamento interno para o rodapé */
+    text-align: center; /* Centraliza o texto no rodapé */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    ul.menu {
+        flex-direction: column; /* Alinha os itens em coluna em telas menores */
+        gap: 10px; /* Espaçamento reduzido entre os itens */
+    }
+}
