@@ -1,15 +1,16 @@
 /* Definição básica de cores e fontes para acessibilidade */
 body {
-    background-color: #000000; /* Fundo preto */
-    color: #FFFFFF; /* Texto branco */
-    font-family: Arial, sans-serif; /* Fonte legível */
-    text-align: center; /* Centraliza todo o conteúdo */
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: Arial, sans-serif;
+    text-align: center;
     margin: 0;
     padding: 0;
+    position: relative; /* Torna o body um contêiner posicionado */
 }
 
 h1 {
-    color: #1E90FF; /* Azul claro para o título */
+    color: #1E90FF;
     margin-top: 20px;
     font-size: 2em;
 }
@@ -20,61 +21,83 @@ p {
     line-height: 1.5;
 }
 
+/* Estilos para as imagens */
+.image-left,
+.image-right {
+    position: absolute; /* Posiciona as imagens em relação ao body */
+    top: 50%; /* Alinha verticalmente ao centro */
+    transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+}
+
+.image-left {
+    left: 5%; /* Espaçamento da esquerda */
+}
+
+.image-right {
+    right: 5%; /* Espaçamento da direita */
+}
+
+/* Estilos para as imagens dentro das divs */
+.image-left img,
+.image-right img {
+    max-width: 100px; /* Define um tamanho máximo para as imagens */
+    height: auto; /* Mantém a proporção da imagem */
+}
+
 /* Estilos para formulários */
 form {
-    display: inline-block; /* Centraliza o formulário */
-    background-color: #1C1C1C; /* Fundo cinza escuro para o formulário */
+    display: inline-block;
+    background-color: #1C1C1C;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    text-align: left; /* Alinha o texto à esquerda para acessibilidade */
-    max-width: 400px; /* Define um tamanho máximo para o formulário */
-    width: 90%; /* Define a largura do formulário como 90% da tela */
-    box-sizing: border-box; /* Inclui o padding na largura total */
+    text-align: left;
+    max-width: 400px;
+    width: 90%;
+    box-sizing: border-box;
 }
 
 label {
     display: block;
     margin-bottom: 5px;
     color: #FFFFFF;
-    font-weight: bold; /* Texto em negrito para rótulos */
+    font-weight: bold;
 }
 
 input[type="text"] {
-    width: 100%; /* Ajusta a largura para preencher o formulário sem exceder */
+    width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 2px solid #1E90FF; /* Borda azul claro */
+    border: 2px solid #1E90FF;
     border-radius: 5px;
-    background-color: #000000; /* Fundo preto */
-    color: #FFFFFF; /* Texto branco */
+    background-color: #000000;
+    color: #FFFFFF;
     font-size: 1em;
-    box-sizing: border-box; /* Inclui o padding na largura total */
+    box-sizing: border-box;
 }
 
-/* Estilo para a área de ações */
 .actions {
-    text-align: center; /* Centraliza os links */
-    margin: 20px 0; /* Espaçamento vertical */
+    text-align: center;
+    margin: 20px 0;
 }
 
 .actions .button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #1E90FF; /* Azul claro */
-    color: #FFFFFF; /* Texto branco */
-    text-align: center; /* Centraliza o texto */
-    text-decoration: none; /* Remove o sublinhado */
-    border-radius: 5px; /* Borda arredondada */
-    font-weight: bold; /* Texto em negrito */
-    margin: 5px; /* Espaçamento entre os botões */
+    background-color: #1E90FF;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px;
 }
 
 .actions .button:hover {
-    background-color: #104E8B; /* Azul mais escuro ao passar o cursor */
+    background-color: #104E8B;
 }
-/* Adiciona foco aos campos de entrada */
+
 input[type="text"]:focus {
-    border-color: #1E90FF; /* Borda azul claro no foco */
-    outline: none; /* Remove o contorno padrão do navegador */
+    border-color: #1E90FF;
+    outline: none;
 }

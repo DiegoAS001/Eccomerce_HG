@@ -6,8 +6,9 @@
     <link rel="stylesheet" th:href="@{/css/finalizar.css}">
 </head>
 <body class="confirmacao-compra">
-    <h1>Compra Finalizada com Sucesso!</h1>
+    <h1>Compra Finalizada com Sucesso! <span th:text="${session.usuario.username}">anônimo</span> </h1>
+    <h4>Seus produtos serão enviados para o endereço cadastrado.</h4>
     
-    <a th:href="@{/home}" class="button">Voltar ao Início</a>
+    <a th:href="@{/home}" class="button">Comprar novamente</a>
 </body>
 </html>

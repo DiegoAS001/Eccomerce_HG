@@ -7,16 +7,16 @@
     <script th:src="@{/js/carrinho.js}"></script>
 </head>
 <body>
-    <h1>Produtos</h1>
+    <h1>Jogos</h1>
 
     <div class="flash" th:if="${msg}">
         <span th:text="${msg}"></span>
     </div>
 
     <p>
-        <a th:href="@{/carrinho/visualizar}" class="button">Visualizar carrinho</a>
+        <a th:href="@{/carrinho/visualizar}" class="button">Carrinho</a>
         <a th:href="@{/home}" class="button">Início</a> <!-- Botão "Início" estilizado -->
-        <span th:if="${session.carrinho.vazio}"> (vazio)</span>
+        <span th:if="${session.carrinho.vazio}"></span>
     </p>
 
     <div class="product-grid">
