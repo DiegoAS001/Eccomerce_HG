@@ -2,15 +2,12 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8">
-	<title>Haven Geek - Login</title>
-	<link rel="stylesheet" th:href="@{/css/common.css}">
-</head>
-<body>
 	<title>Haven Geek</title>
 	<link rel="stylesheet" th:href="@{/css/login.css}">
+
 </head>
 <body>
-<h1>Bem vindo ao Haven Geek</h1>
+	<h1>Bem vindo ao Haven Geek</h1>
 
 
 	<div class="flash" th:if="${msg}">
@@ -22,16 +19,16 @@
 		
 		<p>
 			<label for="username">Usuário: </label>
-			<input type="text" name="username" id="username" required>
+			<input type="text" name="username" id="username" placeholder="Digite seu nome de usuário" required>
 		</p>
 		
 		<p>
 			<label for="password">Senha: </label>
-			<input type="password" name="password" id="password" required>
+			<input type="password" name="password" id="password" placeholder="Digite sua senha"  required>
 		</p>
 		
 
-		<button type="submit">Enviar</button>
+		<button type="submit">Entrar</button>
 	</form>
 	
 	<p>
