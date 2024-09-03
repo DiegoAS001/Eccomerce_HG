@@ -22,8 +22,6 @@ public class CartaoDAO {
 				/* Iniciando transação */
 				conn.setAutoCommit(false);
 				
-				
-				/* Inserindo registro na tabela `usuario` */
 				PreparedStatement ps = conn.prepareStatement(
 						"INSERT INTO cartao (nome, numero, cvv, data_vencimento) values (?, ?, ?, ?);", 
 						Statement.RETURN_GENERATED_KEYS);
@@ -33,8 +31,8 @@ public class CartaoDAO {
 				ps.setInt(3, cartao.getCvv());
 				ps.setString(4, cartao.getData_vencimento());
 				
+				ps.executeUpdate();
 				ResultSet rs = ps.getGeneratedKeys();
-				rs = ps.getGeneratedKeys();
 				
 				/* Finalizando transação */
 				conn.commit();

@@ -1,6 +1,8 @@
 package edu.ifsp.web.cartão;
 
 import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import edu.ifsp.modelo.Cartao;
 import edu.ifsp.persistencia.CartaoDAO;
 import edu.ifsp.persistencia.PersistenceException;
+import edu.ifsp.web.Flash;
 import edu.ifsp.web.templates.Template;
 
 
@@ -22,7 +25,6 @@ public class NovoCartaoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Template.render("cartao/cadastroCartao", request, response);		
 	}
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
@@ -40,11 +42,11 @@ public class NovoCartaoServlet extends HttpServlet {
 				
 			
 		} catch (PersistenceException pe) {
-			pe.printStackTrace();
+			Logger.getGlobal().log(Level.SEVERE, pe.getMessage(), pe);
 		}
 		
 		
-		response.sendRedirect(request.getContextPath() + "/carrinho/visualizar");
+		response.sendRedirect("/fim");
 	}
 }
 

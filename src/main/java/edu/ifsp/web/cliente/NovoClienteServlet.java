@@ -39,8 +39,7 @@ public class NovoClienteServlet extends HttpServlet {
 			cliente.setEstado(request.getParameter("estado"));
 			cliente.setCep(request.getParameter("cep"));
 			
-			dao.save(cliente);
-			Flash.setAttribute(request, "login", "msg", "Usuário %s cadastrado com sucesso.".formatted(cliente.getUsuario().getUsername()));			
+			dao.save(cliente);			
 			
 		} catch (PersistenceException pe) {
 			Flash.setAttribute(request, "login", "msg", pe.getLocalizedMessage());

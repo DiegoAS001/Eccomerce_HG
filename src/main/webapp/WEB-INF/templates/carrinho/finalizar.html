@@ -28,17 +28,11 @@
             <h2>Escolha o método de pagamento</h2>
             <div class="payment-options">
                 <label>
-                    <input type="radio" name="payment" value="pix"> Pix
-                </label>
-                <label>
                     <input type="radio" name="payment" value="cartao_credito"> Cartão Crédito
-                </label>
-                <label>
-                    <input type="radio" name="payment" value="cartao_debito"> Cartão Débito
                 </label>
             </div>
             
-            <a th:href="@{/fim}" class="button">Finalizar compra</a>
+            <a th:href="@{cartao/cadastro}" class="button">Finalizar compra</a>
         </form>
     </div>
     
