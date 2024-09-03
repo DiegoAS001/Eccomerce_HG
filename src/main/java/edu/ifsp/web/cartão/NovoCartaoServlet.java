@@ -46,7 +46,7 @@ public class NovoCartaoServlet extends HttpServlet {
 		}
 		
 		
-		response.sendRedirect("/fim");
+		response.sendRedirect(request.getContextPath() + "/login");
 	}
 }
 
